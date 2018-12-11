@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Typography, Drawer} from '@material-ui/core';
+import {Grid, Typography, Drawer, List, ListItem, ListItemText} from '@material-ui/core';
 import ImageMapper from 'react-image-mapper';
 
 class MainImageGrid extends Component {
@@ -25,22 +25,30 @@ class MainImageGrid extends Component {
     render() {
         return(
         <div>
-        <Grid container direction='column' justify='center' alignItems='center'>
-            <Typography variant="h2">CoffeeAndT!</Typography>
-            <Grid container direction="row" justify="space-evenly" alignItems="center">
-                <Grid item xs={2} />
-                <Grid item xs={10}>
-                    <ImageMapper
-                        src={require('../img/mbtamap-1.png')}
-                        map={this.map}
-                        width={1200}
-                        onMouseEnter={area => console.log(area.name)}
-                        onClick={area => this.setState({displayDrawer: true})} />
+            <Grid container direction='column' justify='center' alignItems='center'>
+                <Typography variant="h2">CoffeeAndT!</Typography>
+                <Grid container direction="row" justify="space-evenly" alignItems="center">
+                    <Grid item xs={2} />
+                    <Grid item xs={10}>
+                        <ImageMapper
+                            src={require('../img/mbtamap-1.png')}
+                            map={this.map}
+                            width={1200}
+                            onMouseEnter={area => console.log(area.name)}
+                            onClick={area => this.setState({displayDrawer: true})} />
+                    </Grid>
+                    <Grid item xs={2} />
                 </Grid>
-                <Grid item xs={2} />
             </Grid>
-        </Grid>
-        <Drawer anchor="right" open={this.state.displayDrawer} onClose={this.closeDrawer}></Drawer>
+            <Drawer anchor="right" open={this.state.displayDrawer} onClose={this.closeDrawer}>
+                <div>
+                    <List>
+                        <ListItem>
+                            <ListItemText primary={"CoffeeStuff"}/>
+                        </ListItem>
+                    </List>
+                </div>
+            </Drawer>
         </div>
         );
     }
