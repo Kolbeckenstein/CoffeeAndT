@@ -14,9 +14,27 @@ class MainImageGrid extends Component {
     map = {
         name: 'Test Map',
         areas: [
-            { name: 'test', shape: "circle", coords: [770, 480, 10] }
+            { name: 'Alewife', shape: "circle", coords: [358, 115, 10] },
+            { name: 'Davis', shape: "circle", coords: [392, 149, 10] },
+            { name: 'Porter', shape: "circle", coords: [427, 185, 10] },
+            { name: 'Harvard', shape: "circle", coords: [462, 220, 10] },
+            { name: 'Central', shape: "circle", coords: [496, 254, 10] },
+            { name: 'Kendal/MIT', shape: "circle", coords: [532, 289, 10] },
+            { name: 'Charles/MGH', shape: "circle", coords: [573, 331, 10] },
+            { name: 'Park', shape: "circle", coords: [601, 358, 10] },
+            { name: 'Downtown Crossing', shape: "circle", coords: [770, 480, 10] },
         ]
     }
+
+
+    358,115 - Alewife
+392,149 - Davis
+427,185 - Porter
+462,220 - Harvard
+496,254 - Central
+532,289, Kendal/MIT
+573,331, Charles/MGH
+601,358, Park
 
     closeDrawer = () => {
         this.setState({displayDrawer: false})
